@@ -1,31 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="calendario.css">
+    <link rel="stylesheet" href="css/calendario.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <title>Document</title>
+    <title>Calendário Interativo</title>
 </head>
 <body>
-    <h1 title="18 de Dezembro"></h1>
     <div class="container">
       <div class="calendar">
         <div class="front">
-          <div class="current-date">
-            <h1>Friday 15th</h1>
-            <h1>January 2016</h1> 
+          <div class="current-date">           
+            <script>
+              var data = new Date();
+              var diaSemana = data.getDay();
+              var dia = data.getDate();
+              var mes = data.getMonth();
+              var ano = data.getFullYear();
+              var meses = new Array("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro")
+              var semanas = new Array("Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira","Sabado",)
+              document.write( dia + " de " + meses[mes]);
+              document.write("<br>");
+            </script>
+            <div class="current-date-week">
+              <script>
+                document.write(semanas[diaSemana]);
+              </script>
+            </div>
+            <button id="btn-exibicao"type="button" onclick="teste()"><img src="img/Circled Arrow.png" alt="">
+              
+            </button>
           </div>
           <div class="current-month">
             <ul class="week-days">
-              <li>MON</li>
-              <li>TUE</li>
-              <li>WED</li>
-              <li>THU</li>
-              <li>FRI</li>
-              <li>SAT</li>
-              <li>SUN</li>
+              <li>D</li>
+              <li>S</li>
+              <li>T</li>
+              <li>Q</li>
+              <li>Q</li>
+              <li>S</li>
+              <li>S</li>
             </ul>
             <div class="weeks">
               <div class="first">
@@ -76,39 +94,7 @@
             </div>
           </div>
         </div>
-        <div class="back">
-          <input placeholder="What's the event?">
-          <div class="info">
-            <div class="date">
-              <p class="info-date">
-              Date: <span>Jan 15th, 2016</span>
-              </p>
-              <p class="info-time">
-                Time: <span>6:35 PM</span>
-              </p>
-            </div>
-            <div class="address">
-              <p>
-                Address: <span>129 W 81st St, New York, NY</span>
-              </p>
-            </div>
-            <div class="observations">
-              <p>
-                Observations: <span>Be there 15 minutes earlier</span>
-              </p>
-            </div>
-          </div>
-          <div class="actions">
-            <button class="save">
-              Save <i class="ion-checkmark"></i>
-            </button>
-            <button class="dismiss">
-              Dismiss <i class="ion-android-close"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script src="calendario.js"></script>
+
+<script src="javascript/calendario.js"></script>
 </body>
 </html>

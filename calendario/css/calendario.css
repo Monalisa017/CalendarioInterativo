@@ -2,7 +2,6 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -20,7 +19,7 @@ body, html {
 
 body {
   background: #DFEBED;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .container {
@@ -40,18 +39,21 @@ body {
 }
 
 .container .calendar {
-  background: #2B4450;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  opacity: 1;
   border-radius: 4px;
   -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
           box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  height: 501px;
   -webkit-perspective: 1000;
           perspective: 1000;
   -webkit-transition: .9s;
   transition: .9s;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  width: 100%;
+  top: 0px;
+  left: 0px;
+  width: 360px;
+  height: 640px;
 }
 
 /* Front - Calendar */
@@ -69,16 +71,19 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 30px 40px;
+  color: black;
+  font-size: 20px;
+  text-align: center !important;
 }
 
 .current-date h1 {
-  color: #DFEBED;
+  color: black;
   font-size: 1.4em;
   font-weight: 300;
 }
 
 .week-days {
-  color: #DFEBED;
+  color: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -87,6 +92,7 @@ body {
           justify-content: space-between;
   font-weight: 600;
   padding: 30px 40px;
+  font-size: 14px;
 }
 
 .days {
@@ -101,7 +107,7 @@ body {
 }
 
 .weeks {
-  color: #fff;
+  color: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -110,6 +116,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 0 40px;
+  font-size: 14px;
 }
 
 .weeks div {
@@ -125,13 +132,16 @@ body {
   width: 100%;
 }
 
-.weeks span {
+.weeks x
+span {
   padding: 10px;
 }
 
 .weeks span.active {
-  background: #F78536;
+  background: #EC2028 0% 0% no-repeat padding-box;
+  opacity: 0.5;
   border-radius: 50%;
+  color: white;
 }
 
 .weeks span:not(.last-month):hover {
@@ -261,5 +271,15 @@ body {
 .front, .back {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+}
+
+#btn-exibicao {
+  top: 16px;
+  left: 319px;
+  width: 21px;
+  height: 21px;
+  background: white 0% 0% no-repeat padding-box;
+  opacity: 1;
+  border-radius: 10px;
 }
 /*# sourceMappingURL=calendario.css.map */

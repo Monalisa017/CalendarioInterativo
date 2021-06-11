@@ -29,3 +29,10 @@ var app = {
     }
   }
   app.init();
+function teste(){
+    configuracoes.container.toggleClass('flip');
+    currentSide.fadeOut(600);
+    currentSide.hide();
+    desiredSide.show();
+  }
+
