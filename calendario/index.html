@@ -6,35 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/calendario.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Calendário Interativo</title>
 </head>
 <body>
     <div class="container">
+      
       <div class="calendar">
+        
         <div class="front">
-          <div class="current-date">           
-            <script>
-              var data = new Date();
-              var diaSemana = data.getDay();
-              var dia = data.getDate();
-              var mes = data.getMonth();
-              var ano = data.getFullYear();
-              var meses = new Array("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro")
-              var semanas = new Array("Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira","Sabado",)
-              document.write( dia + " de " + meses[mes]);
-              document.write("<br>");
-            </script>
-            <div class="current-date-week">
-              <script>
-                document.write(semanas[diaSemana]);
-              </script>
-            </div>
-            <button id="btn-exibicao"type="button" onclick="teste()"><img src="img/Circled Arrow.png" alt="">
+          <img src="img/logo.png" alt="">
+          <div class="current-date">
+            
+            <div id="up-calendario" onload="dataHoje()">
               
-            </button>
+              <div class="up-script">
+                
+              </div>
+                <div class="dropdown">
+                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" onclick="teste()" onclick="$('#second_tab').trigger('click')">
+                    <span class="caret">
+                    </span>
+                  </button>
+                </div>    
+                <div class="btn-dias">
+                  <button id="hoje"type="button" class="btn btn-light" style="background-color: white;">Hoje</button>
+                  <button type="button" class="btn btn-light" style="background-color: white;">Amanhã</button>
+                  <button type="button" class="btn btn-light" style="background-color: white">Daqui 2 dias</button>
+                </div>
+                <div class="anteriorEproximo"> 
+                  <a class="w3-left w3-btn" href="#" onload="mesAno()">❮ </a>
+                  
+                  <div class="calendar__month" id="mesAno" onblur="teste()">
+
+                  </div>
+                  <a class="w3-right w3-btn" href="#"> ❯</a>
+                </div>
+            </div>
           </div>
+            
+            
           <div class="current-month">
             <ul class="week-days">
               <li>D</li>
@@ -83,18 +95,20 @@
                 <span>24</span>
               </div>
               <div class="fifth">
-                <span>25</span>
-                <span>26</span>
-                <span>27</span>
-                <span>28</span>
-                <span>29</span>
-                <span>30</span>
-                <span>31</span>
+                  <span>25</span>
+                  <span>26</span>
+                  <span>27</span>
+                  <span>28</span>
+                  <span>29</span>
+                  <span>30</span>
+                  <span>31</span>
               </div>
             </div>
           </div>
         </div>
-
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="javascript/calendario.js"></script>
+
 </body>
 </html>

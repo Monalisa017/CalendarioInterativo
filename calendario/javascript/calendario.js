@@ -36,3 +36,27 @@ function teste(){
     desiredSide.show();
   }
 
+function dataHoje(){
+  var data = new Date();
+  var diaSemana = data.getDay();
+  var dia = data.getDate();
+  var mes = data.getMonth();
+  var ano = data.getFullYear();
+  var meses = new Array("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro")
+  var semanas = new Array("Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira","Sabado",)
+  document.write( dia + " de " + meses[mes]);
+  document.write("<br>");
+  document.write(semanas[diaSemana].toUpperCase());
+}
+
+function mesAno(){
+  var data = new Date()
+  var mes = data.getMonth();
+  var ano = data.getFullYear();
+  var meses = new Array("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro")
+  document.write(meses[mes] + ano);
+  mesAno.textContent = meses[mes];
+}
+
+
+
