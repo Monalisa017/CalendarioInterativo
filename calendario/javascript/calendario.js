@@ -5,7 +5,7 @@ var app = {
       days: $('.weeks span'),
       form: $('.back'),
       input: $('.back input'),
-      buttons: $('.back button')
+      buttons: $('.back ')
     },
     init: function() {
       instance = this;
@@ -29,14 +29,31 @@ var app = {
     }
   }
   app.init();
-function teste(){
-    configuracoes.container.toggleClass('flip');
+  $('#left').click(function(){
+    configuracoes.container.toggleClass('front');
+    // currentSide.fadeOut(600);
+    // currentSide.hide();
+    // desiredSide.show();
+    dataAtual(); 
+    mesAnoAtual();
+    }); 
+  $('#right').click(function(){
+    configuracoes.container.toggleClass('back');
     currentSide.fadeOut(600);
     currentSide.hide();
     desiredSide.show();
-  }
+    dataAtual();
+    mesAnoAtual();
 
-function dataHoje(){
+    });
+
+
+
+  $( document ).ready(function() {
+    
+  });
+
+function dataAtual(){
   var data = new Date();
   var diaSemana = data.getDay();
   var dia = data.getDate();
@@ -44,19 +61,27 @@ function dataHoje(){
   var ano = data.getFullYear();
   var meses = new Array("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro")
   var semanas = new Array("Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira","Sabado",)
-  document.write( dia + " de " + meses[mes]);
-  document.write("<br>");
-  document.write(semanas[diaSemana].toUpperCase());
-}
+  var diadeHj = dia + " de " + meses[mes];
+ $('#divDia').text(diadeHj);
+ $('#divDiaSemana').text(semanas[diaSemana].toUpperCase());
 
-function mesAno(){
-  var data = new Date()
-  var mes = data.getMonth();
-  var ano = data.getFullYear();
-  var meses = new Array("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro")
-  document.write(meses[mes] + ano);
-  mesAno.textContent = meses[mes];
+
 }
+function mesAnoAtual(){ 
+    var data = new Date()
+    var mes = data.getMonth();
+    var ano = data.getFullYear();
+    var meses = new Array("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro")
+    var AnoAtual = ano;
+    var AnoAtual = (meses[mes] + " de " + AnoAtual);
+    $('#divAno').text(AnoAtual);
+  }
+
+
+
+
+
+
 
 
 
