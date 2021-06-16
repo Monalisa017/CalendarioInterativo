@@ -133,8 +133,7 @@ body {
   width: 100%;
 }
 
-.weeks x
-span {
+.weeks span {
   padding: 10px;
 }
 
@@ -245,7 +244,7 @@ span {
   border-radius: 10px;
 }
 
-#up-calendario {
+#calendario {
   font: normal normal 600 14.5px/20px Montserrat;
 }
 

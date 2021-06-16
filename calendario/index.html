@@ -35,24 +35,21 @@
           </div>
         </div>
       <div class="current-date">
-        <div id="up-calendario">
+        <div id="calendario">
           <div class="btn-dias">
             <button id="hoje" type="button" class="btn btn-light" style="background-color: white;">Hoje</button>
             <button type="button" class="btn btn-light" style="background-color: white;">Amanhã</button>
             <button type="button" class="btn btn-light" style="background-color: white">Daqui 2 dias</button>
           </div>
           <div class="anteriorEproximo">
-            <a class="w3-left w3-btn" id="btn-left" href="#">❮ </a>
-            <div class="calendar__month">
-              <p id=AnoAtual></p>
-            </div>
-            <div id="divAno"></div>
-            <a class="w3-right w3-btn" id="btn-right" href="#"> ❯</a>
+            <a class="w3-left w3-btn" id="btn-left">❮ </a>
+            <div id="divDataAtual"></div>
+            <a class="w3-right w3-btn" id="btn-right"> ❯</a>
             </div>
           </div>
       </div>
-      <div class="current-month">
-        <ul class="week-days">
+      <div class="current-month" id="dates">
+         <ul class="week-days">
           <li>D</li>
           <li>S</li>
           <li>T</li>
@@ -61,61 +58,63 @@
           <li>S</li>
           <li>S</li>
         </ul>
+        
         <div class="weeks">
-          <div class="first">
-            <span class="last-month">28</span>
-            <span class="last-month">29</span>
-            <span class="last-month">30</span>
-            <span class="last-month">31</span>
-            <span id="dia">01</span>
-            <span>02</span>
-            <span>03</span>
-          </div>
-          <div class="second">
-            <span>04</span>
-            <span>05</span>
-            <span>06</span>
-            <span>07</span>
-            <span>08</span>
-            <span>09</span>
-            <span>10</span>
-          </div>
-          <div class="third">
-            <span>11</span>
-            <span>12</span>
-            <span>13</span>
-            <span>14</span>
-            <span class="active">15</span>
-            <span>16</span>
-            <span>17</span>
-          </div>
-          <div class="fourth">
-            <span>18</span>
-            <span>19</span>
-            <span>20</span>
-            <span>21</span>
-            <span>22</span>
-            <span>23</span>
-            <span>24</span>
-          </div>
-          <div class="fifth">
-            <span>25</span>
-            <span>26</span>
-            <span>27</span>
-            <span>28</span>
-            <span>29</span>
-            <span>30</span>
-            <span>31</span>
-          </div>
+
+            <!-- <div class="first">
+              <span class="last-month">28</span>
+              <span class="last-month">29</span>
+              <span class="last-month">30</span>
+              <span class="last-month">31</span>
+              <span>01</span>
+              <span>02</span>
+              <span>03</span>
+            </div>
+            <div class="second">
+              <span>04</span>
+              <span>05</span>
+              <span>06</span>
+              <span>07</span>
+              <span>08</span>
+              <span>09</span>
+              <span>10</span>
+            </div>
+            <div class="third">
+              <span>11</span>
+              <span>12</span>
+              <span>13</span>
+              <span>14</span>
+              <span class="active">15</span>
+              <span>16</span>
+              <span>17</span>
+              </div>
+              <div class="fourth">
+                <span>18</span>
+                <span>19</span>
+                <span>20</span>
+                <span>21</span>
+                <span>22</span>
+                <span>23</span>
+                <span>24</span>
+              </div>
+            <div class="fifth">
+              <span>25</span>
+              <span>26</span>
+              <span>27</span>
+              <span>28</span>
+              <span>29</span>
+              <span>30</span>
+              <span>31</span>
+            </div> -->
         </div>
       </div>
     </div>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="javascript/calendario.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+  integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="javascript/calendario.js"></script>
 </body>
 </html>
