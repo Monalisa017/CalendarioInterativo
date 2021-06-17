@@ -7,114 +7,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/calendario.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
   <title>Calendário Interativo</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div class="container">
-    <div class="calendar flip">
-      <div class="back">
-        <img src="img/logo.png" alt="">
-        <div class="btn-group dropright">
-          <button type="button" id="left" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-          </button>
-        </div>
-      </div>
-      <div class="front">
-        <div class="btn-group dropleft">
-          <div class="dataAtual">
-            <p id="divDia">
-            <p id="divDiaSemana"></p>
-            <button type="button" id="right" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-            </button>
-          </div>
-        </div>
-      <div class="current-date">
-        <div id="calendario">
-          <div class="btn-dias">
-            <button id="hoje" type="button" class="btn btn-light" style="background-color: white;">Hoje</button>
-            <button type="button" class="btn btn-light" style="background-color: white;">Amanhã</button>
-            <button type="button" class="btn btn-light" style="background-color: white">Daqui 2 dias</button>
-          </div>
-          <div class="anteriorEproximo">
-            <a class="w3-left w3-btn" id="btn-left">❮ </a>
-            <div id="divDataAtual"></div>
-            <a class="w3-right w3-btn" id="btn-right"> ❯</a>
-            </div>
-          </div>
-      </div>
-      <div class="current-month" id="dates">
-         <ul class="week-days">
-          <li>D</li>
-          <li>S</li>
-          <li>T</li>
-          <li>Q</li>
-          <li>Q</li>
-          <li>S</li>
-          <li>S</li>
-        </ul>
-        
-        <div class="weeks">
 
-            <!-- <div class="first">
-              <span class="last-month">28</span>
-              <span class="last-month">29</span>
-              <span class="last-month">30</span>
-              <span class="last-month">31</span>
-              <span>01</span>
-              <span>02</span>
-              <span>03</span>
-            </div>
-            <div class="second">
-              <span>04</span>
-              <span>05</span>
-              <span>06</span>
-              <span>07</span>
-              <span>08</span>
-              <span>09</span>
-              <span>10</span>
-            </div>
-            <div class="third">
-              <span>11</span>
-              <span>12</span>
-              <span>13</span>
-              <span>14</span>
-              <span class="active">15</span>
-              <span>16</span>
-              <span>17</span>
-              </div>
-              <div class="fourth">
-                <span>18</span>
-                <span>19</span>
-                <span>20</span>
-                <span>21</span>
-                <span>22</span>
-                <span>23</span>
-                <span>24</span>
-              </div>
-            <div class="fifth">
-              <span>25</span>
-              <span>26</span>
-              <span>27</span>
-              <span>28</span>
-              <span>29</span>
-              <span>30</span>
-              <span>31</span>
-            </div> -->
+  <div class="container">
+    <div class="row">
+
+
+        <div class="current-date-bar">
+          <div class="">
+            <p id="divDia" class=""></p>
+            <p id="divDiaSemana" class=""></p>
+          </div>
+          
+          <a class="btn btn-secondary dropdown-toggle" data-bs-toggle="collapse" href="#collapseExample" role="button"
+            aria-expanded="false" aria-controls="collapseExample">
+          </a>
         </div>
+
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+
+            <div class="current-date">
+              <div id="calendario">
+                <div class="btn-dias">
+                  <button id="hoje" type="button" class="btn btn-light" style="background-color: white;">Hoje</button>
+                  <button type="button" class="btn btn-light" style="background-color: white;">Amanhã</button>
+                  <button type="button" class="btn btn-light" style="background-color: white">Daqui 2 dias</button>
+                </div>
+                <div class="anteriorEproximo">
+                  <a class="w3-left w3-btn" id="btn-left">❮ </a>
+                  <div id="divDataAtual"></div>
+                  <a class="w3-right w3-btn" id="btn-right"> ❯</a>
+                </div>
+              </div>
+            </div>
+            <div class="current-month">
+              <div>
+                <div class="day label">Dom</div>
+                <div class="day label">Seg</div>
+                <div class="day label">Ter</div>
+                <div class="day label">Qua</div>
+                <div class="day label">Qui</div>
+                <div class="day label">Sex</div>
+                <div class="day label">Sáb</div>
+              </div>
+
+              <div class="clear"></div>
+            </div>
+            <div id="weeks"></div>
+
+          </div>
+        </div>
+
+
       </div>
-    </div>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-  integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="javascript/calendario.js"></script>
+
+  </div>
+  <script src="javascript/calendario.js"></script>
 </body>
+
 </html>
