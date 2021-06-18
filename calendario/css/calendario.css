@@ -275,4 +275,9 @@ body {
 .arrow:hover {
   cursor: pointer;
 }
+
+.b_expansion_chevron.b_chevron_up {
+  position: relative;
+  left: 65%;
+}
 /*# sourceMappingURL=calendario.css.map */
