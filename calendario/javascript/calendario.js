@@ -150,11 +150,26 @@ var funCalendario = {
       dataAtualcal.textContent = meses[data.getMonth()] + " de " + data.getFullYear().toString();
     }
   }
-}
+};
+
+debugger
+  $ (document).ready(function(){
+    $(".exibe").click(function(){
+      $(".exibe").hide() && $(".esconde").show();
+    }
+    );
+
+  $ (document).ready(function(){
+    $(".esconde").click(function(){
+       $(".exibe").show();
+    }
+    );
+
+});
 
  funCalendario.init();
  funCalendario.concatenarDataAtualComMes();
  funCalendario.concatenarMesAtualComAno(mes, ano);
  document.getElementById('btn-left').addEventListener('click', () => funCalendario.lastMonth());
  document.getElementById('btn-right').addEventListener('click', () => funCalendario.nextMonth());
- funCalendario.writeMonth(mes);
+ funCalendario.writeMonth(mes)});

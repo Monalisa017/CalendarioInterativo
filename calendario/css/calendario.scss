@@ -96,20 +96,7 @@ body {
   align-items: center;
   flex-direction: row;
 }
-#right,
-#left {
-  text-align: center;
-  background-color: red;
-  align-content: end;
-  border-radius: 150%;
-  width: 30px;
-  height: 30px;
-  box-shadow: 0 0 0 0 rgba(248, 242, 242, 0), 0 0 0 0 rgba(0, 0, 0, 0) !important;
-  border-bottom: 0px;
-  margin-left: 300px;
-  margin-top: -25%;
-  border: none !important;
-}
+
 #btn-left,
 #btn-right {
   text-decoration: none;
@@ -227,7 +214,34 @@ body {
     cursor: pointer;
   }
 }
-.b_expansion_chevron.b_chevron_up{
-  position: relative;
-  left: 65%;
+.exibe{
+  position: absolute;
+}
+
+.esconde{
+  position: absolute;
+}
+
+.data-btn{
+    border-radius:50%;
+    height:21px;
+    width:21px;
+    background-color: #EC2028;
+    border: none;
+    padding:0;
+    position:relative;
+    left:50%;
+    transform: translate(-50%, -50%);
+    font-size: 8px
+}
+#weeks{
+  top: 324px;
+  left: 221px ;
+  height: 19px ;
+  text-align: center ;
+  font: normal normal 600 5px/10px Montserrat ;
+  letter-spacing: 0px ;
+  color: #171717;
+  opacity: 1;
+  align-content: center;
 }

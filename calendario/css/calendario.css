@@ -135,23 +135,6 @@ body {
           flex-direction: row;
 }
 
-#right,
-#left {
-  text-align: center;
-  background-color: red;
-  -ms-flex-line-pack: end;
-      align-content: end;
-  border-radius: 150%;
-  width: 30px;
-  height: 30px;
-  -webkit-box-shadow: 0 0 0 0 rgba(248, 242, 242, 0), 0 0 0 0 rgba(0, 0, 0, 0) !important;
-          box-shadow: 0 0 0 0 rgba(248, 242, 242, 0), 0 0 0 0 rgba(0, 0, 0, 0) !important;
-  border-bottom: 0px;
-  margin-left: 300px;
-  margin-top: -25%;
-  border: none !important;
-}
-
 #btn-left,
 #btn-right {
   text-decoration: none;
@@ -276,8 +259,38 @@ body {
   cursor: pointer;
 }
 
-.b_expansion_chevron.b_chevron_up {
+.exibe {
+  position: absolute;
+}
+
+.esconde {
+  position: absolute;
+}
+
+.data-btn {
+  border-radius: 50%;
+  height: 21px;
+  width: 21px;
+  background-color: #EC2028;
+  border: none;
+  padding: 0;
   position: relative;
-  left: 65%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 8px;
+}
+
+#weeks {
+  top: 324px;
+  left: 221px;
+  height: 19px;
+  text-align: center;
+  font: normal normal 600 5px/10px Montserrat;
+  letter-spacing: 0px;
+  color: #171717;
+  opacity: 1;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 /*# sourceMappingURL=calendario.css.map */
