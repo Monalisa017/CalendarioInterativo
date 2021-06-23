@@ -5,39 +5,43 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/calendario.css">
+
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/calendario.css">
+
   <title>Calendário Interativo</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
-  <!--script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"--></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-    <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"--></script>  
+
+
 </head>
 
 <body>
 
   <div class="container">
     <div class="row">
+      <div class="col-12 col-md-12">
 
-      <div class="col-12 col-md-12"> 
         <div class="current-date-bar">
-        
+
           <div class="">
             <p id="divDia" class=""></p>
             <p id="divDiaSemana" class=""></p>
           </div>
 
-            <div class="alternaExibicao">
-              <img src="img/seletor-dropdown-reservacanto.png" class="esconde" data-bs-toggle="collapse" href="#collapseExample" width="24" height="24" viewBox="0 0 24 24">
-              <img src="img/seletor-dropup-reservacanto.png" class="exibe" data-bs-toggle="collapse" href="#collapseExample" width="24" height="24" viewBox="0 0 24 24">
-            </div>
+          <div class="alternaExibicao">
+            <img id="downImg" src="img/seletor-dropdown-reservacanto.png" data-bs-toggle="collapse"
+              href="#collapseExample" width="24" height="24">
+            <img id="upImg" src="img/seletor-dropup-reservacanto.png" data-bs-toggle="collapse" href="#collapseExample"
+              width="24" height="24">
+          </div>
         </div>
 
         <div class="collapse" id="collapseExample">
@@ -46,45 +50,48 @@
 
             <div class="current-date">
 
-              <div id="calendario">
-                <div class="btn-dias">
-                  <button id="hoje" type="button" class="btn btn-light" style="background-color: white;">Hoje</button>
-                  <button type="button" class="btn btn-light" style="background-color: white;">Amanhã</button>
-                  <button type="button" class="btn btn-light" style="background-color: white">Daqui 2 dias</button>
-                </div>
-                <div class="anteriorEproximo">
-                  <a class="w3-left w3-btn" id="btn-left">❮ </a>
-                  <div id="divDataAtual"></div>
-                  <a class="w3-right w3-btn" id="btn-right"> ❯</a>
-                </div>
+
+              <div id="btns-dias" class="btn-dias">
+                <button id="hoje" type="button" class="active">Hoje</button>
+                <button id="amanha" type="button">Amanhã</button>
+                <button id="daquiDoisDias" type="button">Daqui 2 dias</button>
               </div>
-            </div>
-            <div class="current-month">
-              <div>
-                <div class="day label">Dom</div>
-                <div class="day label">Seg</div>
-                <div class="day label">Ter</div>
-                <div class="day label">Qua</div>
-                <div class="day label">Qui</div>
-                <div class="day label">Sex</div>
-                <div class="day label">Sáb</div>
+              <div class="anteriorEproximo">
+                <a class="w3-left w3-btn" id="btn-left">❮ </a>
+                <div id="divDataAtual"></div>
+                <a class="w3-right w3-btn" id="btn-right"> ❯</a>
               </div>
 
-              <div class="clear"></div>
             </div>
-            <div id="weeks">
-              <div class="day" style="background-color: red;"></div>
+            <div class="row">
+
+
+              <div class="current-month">
+
+                <div class="day label">D</div>
+                <div class="day label">S</div>
+                <div class="day label">T</div>
+                <div class="day label">Q</div>
+                <div class="day label">Q</div>
+                <div class="day label">S</div>
+                <div class="day label">S</div>
+
+
+                <div class="clear"></div>
+              </div>
+              <div id="weeks">
+                <div class="day" style="background-color: red;"></div>
+              </div>
             </div>
-            
 
           </div>
         </div>
 
       </div>
 
-        
 
-      </div>
+
+    </div>
 
   </div>
   <script src="javascript/calendario.js"></script>
