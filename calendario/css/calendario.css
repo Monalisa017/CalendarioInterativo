@@ -15,6 +15,7 @@ a {
 body,
 html {
   height: 100%;
+  width: 100%;
 }
 
 body {
@@ -22,57 +23,22 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-.container {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 0 auto;
-  max-width: 600px;
-  width: 100%;
-}
-
-.container .calendar {
-  background: #ffffff 0% 0% no-repeat padding-box;
-  opacity: 1;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  -webkit-perspective: 1000;
-          perspective: 1000;
-  -webkit-transition: 0.9s;
-  transition: 0.9s;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  top: 0px;
-  left: 0px;
-  width: 360px;
-  height: 640px;
-}
-
 .current-date-bar {
-  border-bottom: 1px solid rgba(73, 114, 133, 0.6);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 30px 40px;
-  color: black;
-  font-size: 20px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 30px 40px;
+  color: black;
+  font-size: 20px;
+  background-color: #FFFFFF;
   padding: 1rem 1rem;
 }
 
@@ -84,10 +50,13 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 30px 40px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 0 30px 0;
   color: black;
   font-size: 20px;
-  text-align: left !important;
 }
 
 .current-date h1 {
@@ -96,27 +65,41 @@ body {
   font-weight: 300;
 }
 
-#calendario {
-  font: normal normal 600 14.5px/20px Montserrat;
-}
-
-.btn-light {
-  font: normal normal 600 12px/15px Montserrat;
-  letter-spacing: 0px;
-  color: #171717;
-  opacity: 1;
-  border-radius: 50px;
-  display: inline;
-}
-
-.btn-light:hover {
-  border: solid;
-  border-color: red;
+.card-body {
+  border: none;
 }
 
 .btn-dias {
   margin: 10px;
-  margin-top: -10px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn-dias button {
+  font: normal normal 600 12px/15px Montserrat;
+  color: #171717;
+  border: 1px solid #B7B7B7;
+  border-radius: 50px;
+  padding: 10px;
+  background-color: whitesmoke;
+}
+
+.btn-dias button:hover {
+  border-color: #EC2028;
+}
+
+.btn-dias button.active {
+  background-color: #EC2028;
+  color: whitesmoke;
 }
 
 .anteriorEproximo {
@@ -185,7 +168,17 @@ body {
   font-size: 13pt;
   text-align: center;
   border-radius: 10px;
-  border: solid 1px #ddd;
+  border: none;
+  top: 324px;
+  left: 221px;
+  height: 30px;
+  text-align: center;
+  font: normal normal 600 15px/19px Montserrat;
+  letter-spacing: 0px;
+  color: #171717;
+  opacity: 1;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .day .blank {
@@ -207,7 +200,7 @@ body {
 }
 
 .day.label {
-  height: 40px;
+  height: 25px;
   background-color: white;
   color: black;
   border: none;
@@ -217,7 +210,7 @@ body {
 .arrow {
   width: 12px;
   height: 12px;
-  position: absolute;
+  position: relative;
   top: 25px;
   font-size: 12px;
 }
@@ -259,38 +252,13 @@ body {
   cursor: pointer;
 }
 
-.exibe {
-  position: absolute;
-}
-
-.esconde {
-  position: absolute;
-}
-
-.data-btn {
-  border-radius: 50%;
-  height: 21px;
-  width: 21px;
+.active {
   background-color: #EC2028;
-  border: none;
-  padding: 0;
-  position: relative;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  font-size: 8px;
+  border-radius: 20px;
+  color: white;
 }
 
-#weeks {
-  top: 324px;
-  left: 221px;
-  height: 19px;
-  text-align: center;
-  font: normal normal 600 5px/10px Montserrat;
-  letter-spacing: 0px;
-  color: #171717;
-  opacity: 1;
-  -ms-flex-line-pack: center;
-      align-content: center;
+.activeEspecial {
+  border: 1px solid #EC2028;
 }
 /*# sourceMappingURL=calendario.css.map */

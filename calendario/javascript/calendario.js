@@ -18,13 +18,13 @@ for (let index = 6; index <= 12; index++) {
 
 const $toggle = $('#togglebtn');
 
- $toggle.on('click', function() {
-   if ($(this).hasClass('active')) {
-     $(this).removeClass('active');
-   } else {
-     $(this).addClass('active');
-   }
- });
+$toggle.on('click', function () {
+  if ($(this).hasClass('active')) {
+    $(this).removeClass('active');
+  } else {
+    $(this).addClass('active');
+  }
+});
 
 
 
@@ -66,6 +66,9 @@ var funCalendario = {
     var weeks = document.getElementById('weeks');
     weeks.innerHTML = '';
 
+      $("#btns-dias").children().removeClass("active");
+      $("#weeks").children().removeClass("activeEspecial");
+
     for (var i = this.startDay(); i > 0; i--) {
       var d = document.createElement("div");
       d.classList.add("day");
@@ -74,12 +77,13 @@ var funCalendario = {
     }
 
     for (let i = 0; i < this.getTotalDays(month); i++) {
-      if ( i + 1 === dia &&  month === mesAtual) {
+      if (i + 1 === dia && month === mesAtual) {
+        $("#hoje").addClass("active");
         var numDia = i + 1;
         var d = document.createElement("div");
-        d.id = "calendarday_"+ numDia;
-        d.className = "day active" ;
-        d.innerHTML = numDia ;
+        d.id = "calendarday_" + numDia;
+        d.className = "day active";
+        d.innerHTML = numDia;
         document.getElementById("weeks").appendChild(d);
 
       } else {
@@ -87,7 +91,7 @@ var funCalendario = {
         var d = document.createElement("div");
         d.id = "calendarday_" + numDia;
         d.className = "day";
-        d.innerHTML = numDia ;
+        d.innerHTML = numDia;
         document.getElementById("weeks").appendChild(d);
       }
     }
@@ -151,17 +155,46 @@ var funCalendario = {
     }
   }
 };
- funCalendario.init();
- funCalendario.concatenarDataAtualComMes();
- funCalendario.concatenarMesAtualComAno(mes, ano);
- document.getElementById('btn-left').addEventListener('click', () => funCalendario.lastMonth());
- document.getElementById('btn-right').addEventListener('click', () => funCalendario.nextMonth());
- funCalendario.writeMonth(mes);
+funCalendario.init();
+funCalendario.concatenarDataAtualComMes();
+funCalendario.concatenarMesAtualComAno(mes, ano);
+document.getElementById('btn-left').addEventListener('click', () => funCalendario.lastMonth());
+document.getElementById('btn-right').addEventListener('click', () => funCalendario.nextMonth());
+funCalendario.writeMonth(mes);
 
+$("#downImg").show();
+$("#upImg").hide();
 
-  $(".exibe").click(function(){
-    $(".exibe").hide() && $(".esconde").show();
-  })
-  $(".esconde").click(function(){
-     $(".exibe").show();
-  })
+$("#upImg").click(function () {
+  $(this).hide();
+  $("#downImg").show();
+});
+$("#downImg").click(function () {
+  $("#upImg").show();
+  $(this).hide();
+});
+
+$("#btns-dias button").on("click", function () {
+  let mesAtual = new Date().getMonth();
+  let anoAtual = new Date().getFullYear();
+  if (mes == mesAtual && ano == anoAtual) {
+    $("#btns-dias").children().removeClass("active");
+    $("#weeks").children().removeClass("activeEspecial");
+
+    if (!$(this).hasClass("activeEspecial")) {
+      $(this).addClass("active");
+      if (this.id == "amanha") {
+        $("#calendarday_" + (dia + 1)).addClass("activeEspecial");
+      }
+      if (this.id == "hoje") {
+        $("#calendarday_" + dia).addClass("activeEspecial");
+      }
+      if (this.id == "daquiDoisDias") {
+        $("#calendarday_" + (dia + 2)).addClass("activeEspecial");
+      }
+    }
+
+  }
+
+});
+
