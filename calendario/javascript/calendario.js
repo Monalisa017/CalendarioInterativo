@@ -62,7 +62,7 @@ var funCalendario = {
     return start.getDay();
   },
   writeMonth: function (month) {
-
+    let mesAtual = new Date().getMonth();
     var weeks = document.getElementById('weeks');
     weeks.innerHTML = '';
 
@@ -74,20 +74,20 @@ var funCalendario = {
     }
 
     for (let i = 0; i < this.getTotalDays(month); i++) {
-      if (i === dia) {
-        var tmp = i + 1;
+      if ( i + 1 === dia &&  month === mesAtual) {
+        var numDia = i + 1;
         var d = document.createElement("div");
-        d.id = "calendarday_" + i;
-        d.className = "day active";
-        d.innerHTML = tmp;
+        d.id = "calendarday_"+ numDia;
+        d.className = "day active" ;
+        d.innerHTML = numDia ;
         document.getElementById("weeks").appendChild(d);
 
       } else {
-        var tmp = i + 1;
+        var numDia = i + 1;
         var d = document.createElement("div");
-        d.id = "calendarday_" + i;
+        d.id = "calendarday_" + numDia;
         d.className = "day";
-        d.innerHTML = tmp;
+        d.innerHTML = numDia ;
         document.getElementById("weeks").appendChild(d);
       }
     }
@@ -151,25 +151,17 @@ var funCalendario = {
     }
   }
 };
-
-debugger
-  $ (document).ready(function(){
-    $(".exibe").click(function(){
-      $(".exibe").hide() && $(".esconde").show();
-    }
-    );
-
-  $ (document).ready(function(){
-    $(".esconde").click(function(){
-       $(".exibe").show();
-    }
-    );
-
-});
-
  funCalendario.init();
  funCalendario.concatenarDataAtualComMes();
  funCalendario.concatenarMesAtualComAno(mes, ano);
  document.getElementById('btn-left').addEventListener('click', () => funCalendario.lastMonth());
  document.getElementById('btn-right').addEventListener('click', () => funCalendario.nextMonth());
- funCalendario.writeMonth(mes)});
+ funCalendario.writeMonth(mes);
+
+
+  $(".exibe").click(function(){
+    $(".exibe").hide() && $(".esconde").show();
+  })
+  $(".esconde").click(function(){
+     $(".exibe").show();
+  })
